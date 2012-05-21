@@ -14,7 +14,7 @@ module Rubber
             :endpoint => "http://192.168.1.16:8773/services/Cloud"
         }
         
-        //@table_store = ::Fog::AWS::SimpleDB.new(credentials)
+        #@table_store = ::Fog::AWS::SimpleDB.new(credentials)
         
         credentials[:region] = env.region
         @elb = ::Fog::AWS::ELB.new(credentials)
@@ -25,7 +25,7 @@ module Rubber
       end
       
       def table_store(table_key)
-        return Rubber::Cloud::AwsTableStore.new(@table_store, table_key)  
+        #return Rubber::Cloud::AwsTableStore.new(@table_store, table_key)  
       end
       
       def create_image(image_name)
