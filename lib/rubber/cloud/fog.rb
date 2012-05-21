@@ -123,7 +123,7 @@ module Rubber
       end
 
       def create_security_group(group_name, group_description)
-        #@compute_provider.security_groups.create(:name => group_name, :description => group_description)
+        @compute_provider.security_groups.create(:name => group_name, :description => group_description)
       end
 
       def describe_security_groups(group_name=nil)
