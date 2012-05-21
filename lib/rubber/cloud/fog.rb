@@ -170,25 +170,29 @@ module Rubber
       end
 
       def add_security_group_rule(group_name, protocol, from_port, to_port, source)
+        =begin
         group = @compute_provider.security_groups.get(group_name)
         if source.instance_of? Hash
           group.authorize_group_and_owner(source[:name], source[:account])
         else
           group.authorize_port_range(from_port.to_i..to_port.to_i, :ip_protocol => protocol, :cidr_ip => source)
         end
+        =end
       end
 
       def remove_security_group_rule(group_name, protocol, from_port, to_port, source)
+        =begin
         group = @compute_provider.security_groups.get(group_name)
         if source.instance_of? Hash
           group.revoke_group_and_owner(source[:name], source[:account])
         else
           group.revoke_port_range(from_port.to_i..to_port.to_i, :ip_protocol => protocol, :cidr_ip => source)
         end
+        =end
       end
 
       def destroy_security_group(group_name)
-        @compute_provider.security_groups.get(group_name).destroy
+        #@compute_provider.security_groups.get(group_name).destroy
       end
 
       def create_static_ip
