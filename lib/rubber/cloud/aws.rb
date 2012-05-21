@@ -10,7 +10,8 @@ module Rubber
         
         credentials = {
             :aws_access_key_id => env.access_key,
-            :aws_secret_access_key => env.secret_access_key
+            :aws_secret_access_key => env.secret_access_key,
+            :endpoint => "http://192.168.1.16:8773/services/Cloud"
         }
         
         @table_store = ::Fog::AWS::SimpleDB.new(credentials)
