@@ -17,7 +17,7 @@ module Rubber
         #@table_store = ::Fog::AWS::SimpleDB.new(credentials)
         
         credentials[:region] = env.region
-        @elb = ::Fog::AWS::ELB.new(credentials)
+        #@elb = ::Fog::AWS::ELB.new(credentials)
         
         credentials[:provider] = 'AWS'
         env['credentials'] = credentials
