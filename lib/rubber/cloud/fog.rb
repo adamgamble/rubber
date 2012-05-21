@@ -300,8 +300,8 @@ module Rubber
       def create_tags(resource_id, tags)
         # Tags need to be created individually in fog
         tags.each do |k, v|
-          @compute_provider.tags.create(:resource_id => resource_id,
-                                        :key => k.to_s, :value => v.to_s)
+          #@compute_provider.tags.create(:resource_id => resource_id,
+           #                             :key => k.to_s, :value => v.to_s)
         end
       end
       
